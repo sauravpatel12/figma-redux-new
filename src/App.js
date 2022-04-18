@@ -14,7 +14,7 @@ function App() {
   return (
     <>
      <Routes>
-         <Route exact path='/' element={<Signin />} /> 
+         <Route exact path='/signin' element={<Signin />} /> 
          <Route path='/register' element={<Register/>} />
          <Route path='/forgotpassword' element={<Forgot/>} />
          <Route path='/verify' element={<Verify/>} />
