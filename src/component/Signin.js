@@ -4,10 +4,23 @@ import Navbar from "./Navbar";
 // import img2 from "../images/Rectangle2.png";
 // import img3 from "../images/Rectangle2.png";
 import Group from "../images/Group 415.png";
-
-
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import setuser from "../action/index";
 
 const Signin=()=>{
+  const navigate =useNavigate();
+
+  const [email,setemail]=useState("");
+  const [password,setpassword]=useState("");
+  const dispatch=useDispatch();
+  const handelsubmit=(e)=>{
+    e.preventDefault();
+    dispatch(setuser({email,password}));
+
+    }
+
 return(
 <>
    <Navbar />
@@ -48,15 +61,15 @@ return(
     <div className="cls1">Welcome Back!</div>
     <div className="cls2">Login to Your account</div>
     <div className="cls3">Email</div>
-    <input  className="cls4"  type="text" placeholder="Typing..." />
+    <input  className="cls4"  type="text" placeholder="Typing..." value={email} onChange={(e)=>{setemail(e.target.value)}}/>
     <div  className="cls5">Password</div>
-    <input type="password" className="cls55" placeholder="Enter your password" />
+    <input type="password" className="cls55" placeholder="Enter your password" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
     <div className="flex1">
     <input type="checkbox" className="cls6" name="" id="" />
     <div className="cls7" >Remember Me</div>
-    <div className="cls8">Forgot password?</div>
+    <div className="cls8" onClick={()=>{navigate('/forgotpassword')}}>Forgot password?</div>
     </div>
-    <button className="btn-lg cls9">Sign in</button>
+    <button className="btn-lg cls9" onClick={handelsubmit}>Sign in</button>
     <div className="cls10">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div>
    </div>
   </div>

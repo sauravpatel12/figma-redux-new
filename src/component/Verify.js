@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import OtpInput from 'react-otp-input';
 import { useState } from 'react';
 import Star from '../images/Star.png';
+import { border } from '@mui/system';
 const Verify=()=>{
     const [otp,setotp]= useState('');
     const handleChange=(e)=>{
@@ -37,7 +38,15 @@ const Verify=()=>{
         onChange={handleChange}
         numInputs={4}
         separator={<span><pre> </pre></span>}
-        className="iii"
+        inputStyle={{
+          width:"52px",
+          height:"50px",
+          
+          background: "#F7F9FC",
+          borderradius: "4px",
+          border:"none",
+          margin:"16px"
+        }}
       />
       </div>
       <div className='fm4'>

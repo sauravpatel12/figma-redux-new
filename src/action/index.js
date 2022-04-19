@@ -1,6 +1,8 @@
-export  const setuser =(newuser)=>{
+ const setuser =(newuser)=>{
     return{
         type:'setuser',
-        playload:newuser,
+        payload:newuser,
     };
 };
+
+export default setuser;

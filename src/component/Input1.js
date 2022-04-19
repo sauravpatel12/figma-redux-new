@@ -23,6 +23,7 @@ const Input1 =()=>{
     
       const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
+        console.log(values);
       };
       const handleClickShowPassword = () => {
         setValues({
@@ -37,7 +38,7 @@ const Input1 =()=>{
     
     return(
       <FormControl sx={{  width: '21vw',backgroundColor:"#F9F9F9",height:"2vw" }} variant="standard">
-      <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+      {/* <InputLabel htmlFor="standard-adornment-password">Password</InputLabel> */}
       <Input
         id="standard-adornment-password"
         type={values.showPassword ? 'text' : 'password'}

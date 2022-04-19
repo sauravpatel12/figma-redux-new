@@ -1,16 +1,17 @@
 
-const initialstate={
-    user:[
+const initialstate=[
+    
         {
-            id:1,
-            name:"dipesh"
+            email:1,
+            password:"dipesh"
         }
-    ]
-};
+    
+]
 export const user=(state=initialstate,action) =>{
     switch(action.type){
         case "setuser":
-            return state;
+            console.log("user vi")
+            return [...state,action.payload];
         default:
             return state;    
     }
