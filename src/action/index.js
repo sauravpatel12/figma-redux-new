@@ -1,6 +1,6 @@
-export  const arrdata =()=>{
+export  const setuser =(newuser)=>{
     return{
-        type:'arrdatas',
-        
-    }
-}
+        type:'setuser',
+        playload:newuser,
+    };
+};

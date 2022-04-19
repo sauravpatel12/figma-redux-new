@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import Signin from "./signin";
-import arr from "./arr";
+import {user} from "../reducer/user";
+
+
 const reducers = combineReducers({
-     Signin,
-     arr
+     user,
 
 });
 export default reducers; 
