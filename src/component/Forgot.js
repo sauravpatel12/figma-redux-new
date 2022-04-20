@@ -42,11 +42,14 @@ return(
     setemail(e.target.value)
 
 }}/>
-<div className="hi5">RESET</div>
+<div className="hi5" onClick={()=>{
+  setemail("");
+
+}}>RESET</div>
 <button className="hi6" onClick={()=>
     {
     handlesubmit();
-    //  navigate('/verify');
+    
     }
     }>Send
 </button>

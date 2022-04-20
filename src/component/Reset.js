@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Star from "../images/Star.png"
 
 const Reset =()=>{
+  const navigate=useNavigate();
+
 
     return(
         <>
@@ -14,7 +18,7 @@ const Reset =()=>{
          
 
            <div className="r12">
-            <h1>images</h1>
+            <img src={Star} className="fffp"/>
           </div>
             </div>
             <div className="col-8 per2 ">
@@ -26,7 +30,9 @@ const Reset =()=>{
                    <input type="text" placeholder="Typing..." className="kg4" />
                    <div className="kg5" >Confirm password</div>
                    <input type="text" placeholder="Typing..." className="kg6" /><br></br>
-                   <button className="kg7">Save</button>
+                   <button className="kg7" onClick={()=>{
+                     navigate('/signin')
+                   }}>Save</button>
                    <div className="fee">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div> 
                </div>
 

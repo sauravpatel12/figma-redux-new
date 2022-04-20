@@ -9,7 +9,9 @@ import Con1 from "../images/Construction.png"
 import Con2 from "../images/Construction (1).png"
 import Con3 from "../images/Construction (2).png"
 import Con4 from "../images/Construction (3).png"
+import { useNavigate } from "react-router-dom";
 const Profile1=()=>{
+  const navigate=useNavigate();
     return(
   <>
     <Navbar1/>
@@ -53,7 +55,10 @@ const Profile1=()=>{
 
 
         <div>
-          <button className="kk1">Change Password</button> <br></br>
+          <button className="kk1" onClick={()=>{
+            navigate("/changepassword")
+
+          }}>Change Password</button> <br></br>
           <button className="kk2">Logout</button>
         </div>
         </div>
