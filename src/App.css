@@ -34,6 +34,18 @@
   height: 42px;
   
 }
+.loginbtn1{
+  width: 8vw;
+  height: 2.9vw;
+  border: 1px solid #FFFFFF;
+  background: #FF7F00;
+  border-radius: 4px;
+  color:white;
+  width: 118px;
+  height: 42px;
+  
+
+}
 .registerbtn{
   color: white;
   background: #FF7F00;
@@ -44,6 +56,19 @@
   width: 118px;
   height: 42px;
   border: none;
+}
+.registerbtn1{
+  width: 8vw;
+  height: 2.9vw;
+  border: 1px solid #FFFFFF;
+  background-color: #242F3A;
+  border-radius: 4px;
+  color:white;
+  width: 118px;
+  height: 42px;
+  margin-left:1.5vw;
+  margin-right:1.5vw;
+
 }
 .con1{
   height:calc(100vh - 58px)
@@ -559,6 +584,7 @@ text-transform: uppercase;
 
 color: #FF7F00;
 }
+
 .fm5{
   border: none;
   width: 24vw;
@@ -1358,3 +1384,20 @@ color: #68748b;
   }
 }
 
+@media only screen and (max-width: 800px){
+  .flex1{
+    
+    display: table-row-group;
+  }
+  .cls8{
+    margin-left: 0px;
+  }
+  }
+
+
+  .fffp{
+    margin-left: 50px;
+  }
+  .errr{
+    color: red;
+  }

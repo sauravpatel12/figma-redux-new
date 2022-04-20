@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import Navbar1 from "./Navbar1";
 const Createpost=()=>{
+    const navigate=useNavigate();
 
     return(<>
      <Navbar1 />
@@ -21,7 +23,10 @@ At w3schools.com you will learn how to make a website. They offer free tutorials
 </div>
 <div className="d-flex cp6 justify-content-center align-items-center">
     <div className="cp7">Cancel</div>
-    <button className="cp8">Create Post</button>
+    <button className="cp8" onClick={()=>{
+        navigate('/postlist')
+        
+    }}>Create Post</button>
 </div>
 
 </div>

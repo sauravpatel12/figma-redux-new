@@ -3,7 +3,12 @@ import OtpInput from 'react-otp-input';
 import { useState } from 'react';
 import Star from '../images/Star.png';
 import { border } from '@mui/system';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 const Verify=()=>{
+  const navigate=useNavigate();
+  const location=useLocation();
+  const path=location.pathname;
+
     const [otp,setotp]= useState('');
     const handleChange=(e)=>{
         setotp(e);
@@ -53,9 +58,15 @@ const Verify=()=>{
           RESEND 
       </div>
       <div>
-      <button className='fm5'>Verify</button>
+      <button className='fm5' onClick={()=>{
+        navigate('/resetpassword');
+
+      }}>Verify</button>
       </div>
-      <button className='fm6'>Change Email</button>
+      <button className='fm6' onClick={()=>{
+        navigate('/forgotpassword');
+
+      }} >Change Email</button>
 
 
 
