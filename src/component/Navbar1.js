@@ -17,14 +17,14 @@ navigate("/signin");
 {
  location.pathname==="/createpost" ? <button onClick={()=>{
      navigate("/createpost");
- }}>createpost</button>:console.log("hi")  
+ }} className="bttttn">createpost</button>:console.log("hi")  
 
 
 }
 {
  location.pathname==="/postlist" ? <button onClick={()=>{
     navigate("/createpost");
-}}>createpost</button>:console.log("hi")  
+}} className="bttttn">createpost</button>:console.log("hi")  
 
 
 }

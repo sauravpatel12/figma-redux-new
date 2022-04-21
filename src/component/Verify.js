@@ -26,7 +26,7 @@ const Verify=()=>{
    </div>
    <div className='pp2 '>
   
-  <img src={Star}  className="java"/>
+  <img src={Star}  className="java popo1"/>
 
    </div>
         

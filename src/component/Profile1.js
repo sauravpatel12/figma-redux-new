@@ -21,7 +21,7 @@ const Profile1=()=>{
        <div className="ren1">
 
          {/* cmp1  */}
-        <div>
+        <div  className="uiii">
         <img src={User1} className="img99" />
 
         </div>
@@ -36,30 +36,30 @@ const Profile1=()=>{
              </div>
           
           <div className="bb">   
-        <div className="d-flex xx">
+        <div className="d-flex xx  align-items-center">
                <div><img src={Mail}/></div>
-               <div><div><img className="pp" src={Con1}/></div></div>
+               <div className="vpv">jane.cooper@gmail.com</div>
         </div>
-        <div className="d-flex xx">
+        <div className="d-flex xx  align-items-center">
                <div><img src={Call} /></div>
-               <div><div><img className="pp" src={Con2}/></div></div>
+               <div className="vpv">987 654 3210</div>
         </div>
-        <div className="d-flex xx">
+        <div className="d-flex xx  align-items-center">
                <div><img src={Female} /></div>
-               <div><div><img  className="pp" src={Con3}/></div></div>
+               <div className="vpv">Female</div>
         </div>
-        <div className="d-flex xx">
+        <div className="d-flex xx  align-items-center">
                <div><img src={Birthday} /></div>
-               <div><div><img  className="pp" src={Con4}/></div></div>
+               <div className="vpv">12/12/1994</div>
         </div>
 
 
         <div>
-          <button className="kk1" onClick={()=>{
+          <button className="kk1 bbnm" onClick={()=>{
             navigate("/changepassword")
 
           }}>Change Password</button> <br></br>
-          <button className="kk2">Logout</button>
+          <button className="kk2 bbnm">Logout</button>
         </div>
         </div>
 
@@ -69,7 +69,7 @@ const Profile1=()=>{
         <div className="ct2">
               <div className="fff">
               <img src={Lee} />
-              <button className="hh1">Change image</button>
+              <input type="file" className="dsdsf" placeholder="Change image" ></input>
               </div>
               <div className="d-flex">
               <div className="hee">
@@ -87,8 +87,8 @@ const Profile1=()=>{
               <div className="comm">Phone*</div>
               <input type="number" placeholder="987 654 3210" className="ji1"/>
               <div className="comm">Gender</div>
-              <div>
-              <input type="radio" name="gender" value="male"/> <span className="comm">Male</span> <input type="radio" name="gender" value="female"/> <span className="comm">Female</span>
+              <div className="priyank">
+              <input type="radio" name="gender" value="male"/> <span className="comm">Male</span> <input type="radio" name="gender" value="female" className="rtrr"/> <span className="comm">Female</span>
               </div>
 
                  

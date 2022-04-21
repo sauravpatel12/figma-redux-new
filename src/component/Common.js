@@ -3,7 +3,11 @@ import D1 from "../images/d1.png"
 import L1 from "../images/L1.png"
 import C1 from "../images/c1.png"
 import Img from "../images/Rectangle 72.png"
+import Modal from "react-modal";
+import { useState } from "react"
+import  Like from './like';
 const Common = () => {
+    const [modelIsOpen,setModalIsOpen] =useState(false);
 
     return (
         <>
@@ -25,9 +29,40 @@ const Common = () => {
                         </div>
                         <div className="pp102">
                             <img src={L1} />
-                            <span>Liked by john and 50 other</span>
+                            <span onClick={()=>{
+                                setModalIsOpen(true)
+
+                            }}>Liked by john and 50 other</span>
 
                         </div>
+                        <Modal isOpen={modelIsOpen}
+                        style={
+                            {
+                                overlay:{
+                                
+                                   
+                                },
+                                content:{
+                                    width: "536px",
+                                    height: "503px",
+                                    marginLeft:"442px",
+                                    marginTop:"96px",
+    
+                                }
+                            }
+                        }>
+                       <div className="bbbbt d-flex justify-content-center align-items-center">
+                           <h1 className="oops">Liked by</h1>
+                          <span className="fiop" onClick={()=>{  setModalIsOpen(false)}}>X</span>
+                       </div>
+                       <div className="hjhj"> <Like /></div>
+                       <div className="hjhj"> <Like /></div>
+                       <div className="hjhj"> <Like /></div>
+                       <div className="hjhj"> <Like /></div>
+                       <div className="hjhj"> <Like /></div>
+                    
+
+                        </Modal>
 
 
                     </div>
