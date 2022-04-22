@@ -25,9 +25,12 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Stack from '@mui/material/Stack';
+import { useDispatch } from "react-redux";
+import setuser from "../action/index";
 
 
 const Register=()=>{
+  const dispatch=useDispatch();
   const [selectedImage, setSelectedImage] = useState(null);
   
   const [values, setValues] = React.useState({
@@ -70,6 +73,7 @@ const formik =useFormik({
   initialValues:{
     email:"",
     firstname:"",
+    lastname:"",
     phone:"",
     password:""
   
@@ -93,13 +97,15 @@ const formik =useFormik({
   }),
   onSubmit:(values)=>{
     console.log("values");
+    dispatch(setuser({email:values.email,
+    password:values.password}));
     console.log(values);
     console.log("hi");
   },
 
 })
 
-console.log('img',selectedImage)
+
 
 
 
@@ -168,29 +174,13 @@ return(
                value={formik.values.email}/>
                 <div  className="errr " >{formik.touched.email && formik.errors.email? <p>{formik.errors.email}</p>:null} </div> 
               <div className='s44'>Password</div>
-              <FormControl sx={{  width: '21vw',backgroundColor:"#F9F9F9",height:"2.8vw" }} variant="standard">
-      {/* <InputLabel htmlFor="standard-adornment-password">Password</InputLabel> */}
-      <Input
-      name="password"
-        onChange={formik.handleChange}
-         onBlur={formik.handleBlur}
-         value={formik.values.password}
-        id="standard-adornment-password"
-        type={values.showPassword ? 'text' : 'password'}
-
-        endAdornment={
-          <InputAdornment position="end">
-            <IconButton
-              aria-label="toggle password visibility"
-              onClick={handleClickShowPassword}
-              onMouseDown={handleMouseDownPassword}
-            >
-              {values.showPassword ? <VisibilityOff /> : <Visibility />}
-            </IconButton>
-          </InputAdornment>
-        }
-      />
-    </FormControl>
+              {/* width: '21vw',backgroundColor:"#F9F9F9",height:"2.8vw" */}
+              <input className='s4' type="password" placeholder='Enter your password' name='password' 
+                  onChange={formik.handleChange}
+               onBlur={formik.handleBlur}
+               value={formik.values.password} />
+           
+   
               {/* <input type="password" className='s5' placeholder='Enter your password' /> */}
               <div className='s6'>Date Of Birth*</div>
               <Datepicker />
