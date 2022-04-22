@@ -10,7 +10,8 @@ const initialstate=[
 export const user=(state=initialstate,action) =>{
     switch(action.type){
         case "setuser":
-            console.log("user vi")
+            
+            console.log(action.payload)
             return [...state,action.payload];
         default:
             return state;    
