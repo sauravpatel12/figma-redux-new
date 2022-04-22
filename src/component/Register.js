@@ -30,12 +30,10 @@ import setuser from "../action/index";
 
 
 const Register=()=>{
-<<<<<<< HEAD
-  const [selectedImage, setSelectedImage] = useState(img3);
-=======
+
+
   const dispatch=useDispatch();
-  const [selectedImage, setSelectedImage] = useState(null);
->>>>>>> c30759fb6df50f21e4bf4c471c24125d18061b92
+  const [selectedImage, setSelectedImage] = useState(img3);
   
   const [values, setValues] = React.useState({
     amount: '',
@@ -149,12 +147,7 @@ return(
           Upload Image
         </Button>
       </label>
-      <label htmlFor="icon-button-file">
-        <Input accept="image/*" id="icon-button-file" type="file" onChange={handleChange1} />
-        <IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>
-      </label>
+    
     </Stack>
                   {/* <input type="file" name="" className='infil' placeholder='Upload Image' id="" /> */}
               </div>

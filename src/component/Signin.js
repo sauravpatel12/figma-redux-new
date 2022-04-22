@@ -69,13 +69,13 @@ return(
   </ol>
   <div class="carousel-inner" >
     <div class="carousel-item active "  >
-      <img class="d-block w-100 img111" src={Group} alt="First slide" />
+      <img class="d-block w-100 img111  img-fluid" src={Group} alt="First slide" />
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 img111" src={Group} alt="Second slide" />
+      <img class="d-block w-100 img111   img-fluid" src={Group} alt="Second slide" />
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 img111" src={Group} alt="Third slide" />
+      <img class="d-block w-100 img111   img-fluid" src={Group} alt="Third slide" />
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,7 +88,7 @@ return(
   </a>
 </div>    
 </div>
-     <div  className="col-5  ">
+     <div  className="col-5  pox">
     <div className="col2">
     <div className="cls1">Welcome Back!</div>
     <div className="cls2">Login to Your account</div>

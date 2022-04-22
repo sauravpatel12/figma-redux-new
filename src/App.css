@@ -313,7 +313,7 @@ color: #1D1C1D;
   border-radius: 4px;
   width: 21vw;
   height: 3vw;
-
+padding: 10px;
 
 }
 .s3{
@@ -337,6 +337,7 @@ color: #1D1C1D;
   border-radius: 4px;
   width: 21vw;
   height: 3vw;
+  padding: 10px;
 
 }
 .s44{
@@ -901,7 +902,7 @@ color: #8F9BB3;
 }
 
 .ren1{
-  width: 100vw;
+  
   height: 8vh;
   background: #E5E5E5;
 
@@ -1287,7 +1288,7 @@ margin-bottom: 1vw;
   margin-top: 19%;
   height: 418px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
 
   .con1{
     display: none;
@@ -1547,3 +1548,55 @@ color: #000000;
   .css-1yo1jo6-MuiStack-root{
     margin-left: 25px;
   }
+
+  @media only screen and (max-width: 800px){
+    
+  .ct{
+    display : block !important;
+
+  }
+  .ct1{
+    width: 94vw;
+
+  }
+  .ct2{
+    width:94vw;
+  }
+}
+
+  @media only screen and (max-width: 650px){
+    
+    .pox{
+       margin-left: 114px;
+    }
+    .cls4{
+  width: 36vw;
+    }
+    .cls55{
+  width: 36vw;
+    }
+    .cls3{
+      font-size: 3vw;
+    }
+    .loginbtn1{
+      width: 100px;
+           
+    }
+    .registerbtn1{
+      width: 100px;
+    }
+    .cls1{
+      font-size: 3.3vw;
+    }
+}
+
+
+  
+ 
+
+
+  
+  
+
+
+  

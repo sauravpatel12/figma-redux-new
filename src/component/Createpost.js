@@ -52,12 +52,7 @@ At w3schools.com you will learn how to make a website. They offer free tutorials
           Upload Image
         </Button>
       </label>
-      <label htmlFor="icon-button-file">
-        <Input accept="image/*" id="icon-button-file" type="file" onChange={handleChange1} />
-        <IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>
-      </label>
+
     </Stack>
     </div>
 <div className="cp5">
