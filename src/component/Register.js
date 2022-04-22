@@ -28,7 +28,7 @@ import Stack from '@mui/material/Stack';
 
 
 const Register=()=>{
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(img3);
   
   const [values, setValues] = React.useState({
     amount: '',

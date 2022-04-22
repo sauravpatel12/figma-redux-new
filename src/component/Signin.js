@@ -3,14 +3,18 @@ import Navbar from "./Navbar";
 import Group from "../images/Group 415.png";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import setuser from "../action/index";
 import {useFormik,form} from "formik";
 import * as yup from "yup";
+import { Store } from "@mui/icons-material";
 
 
 
 const Signin=()=>{
+  const [bool,setbool]=useState(false);
+  const user=useSelector(store=>store.user);
   const formik =useFormik({
     initialValues:{
       email:"",
@@ -24,8 +28,23 @@ const Signin=()=>{
   .min(8, 'Password is too short - should be 8 chars minimum.')
     }),
     onSubmit:(values)=>{
-      console.log("hi");
-      console.log(values);
+     console.log(user);
+     console.log("buttton clickedd");
+  
+     setbool(user.find((currentval)=>{
+       if((currentval.email===values.email )&& (currentval.password === values.password)){
+         return true;
+       }
+     }))
+     if(bool){
+      alert("you are succeessfuly login");
+      navigate('/postlist');
+     }
+     else{
+       alert("Plese enter correct detail");
+     }
+
+
     },
 
   })
@@ -34,7 +53,6 @@ const Signin=()=>{
   const handelsubmit=(e)=>{
     e.preventDefault();
     // dispatch(setuser({email,password}));
-    navigate('/postlist')
 
     }
 
@@ -93,7 +111,6 @@ return(
     value={formik.values.password}/>
     <div  className="cls5 errr">   {formik.touched.password && formik.errors.password? <p>{formik.errors.password}</p>:null} 
     </div>
-    </form>
 
     <div className="flex1 btttn">
       <div className="d-flex justify-content-center align-items-center">
@@ -103,6 +120,7 @@ return(
     <div className="cls8" onClick={()=>{navigate('/forgotpassword')}}>Forgot password?</div>
     </div>
     <button className="btn-lg cls9" type="submit">Sign in</button>
+    </form>
     <div className="cls10">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div>
    </div>
   </div>

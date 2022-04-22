@@ -5,13 +5,24 @@ import C1 from "../images/c1.png"
 import Img from "../images/Rectangle 72.png"
 import Modal from "react-modal";
 import { useState } from "react"
+import { useSelector } from "react-redux"
 import  Like from './like';
-const Common = () => {
-    const [modelIsOpen,setModalIsOpen] =useState(false);
 
+
+
+
+const Common = () => {
+   
+    const data=useSelector(store=>store.postlist)
+
+    const [modelIsOpen,setModalIsOpen] =useState(false);
+ 
     return (
         <>
-        <div className="ci1">
+       { data.map((currentval)=>{
+           
+
+       return (<div className="ci1">
             <div className="d-flex align-items-center" >
                 <img src={P1}  className="pp9"/>
                 <div>
@@ -69,17 +80,24 @@ const Common = () => {
                 </div>
              </div>
             <div className="cc132">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever <br></br> since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              {currentval.arr1}
             </div>
             <div className="d-flex pp323">
-             <img src={Img} className="imgg1" />
-             <img src={Img} className="imgg1" />
-             <img src={Img}  className="imgg1" />
-             <img src={Img} className="imgg1" />
+                
+
+               {currentval.arr2.map((currentval1)=>{
+                   console.log("Hello ");
+                   console.log('hhh',currentval1);
+                  
+                  return <img src={currentval1} className="imgg1" height="52px" width="52px" />
+               })
+             
+            }
 
             </div>
 
 </div>
+       ) }) }
 
         </>
 

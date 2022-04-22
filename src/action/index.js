@@ -4,5 +4,14 @@
         payload:newuser,
     };
 };
+const createpost = (createpost)=>{
+    return{
+
+        type:"createpost",
+        payload:createpost,
+    }
+}
+
 
 export default setuser;
+export {createpost};
