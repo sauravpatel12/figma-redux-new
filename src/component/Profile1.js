@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 
 const Profile1=()=>{
   const user=useSelector(store=>store.user);
-  console.log(user[1].email);
+  
  
   const navigate=useNavigate();
     return(
@@ -52,11 +52,11 @@ const Profile1=()=>{
         </div>
         <div className="d-flex xx  align-items-center">
                <div><img src={Female} /></div>
-               <div className="vpv">male</div>
+               <div className="vpv">{user[1].gender}</div>
         </div>
         <div className="d-flex xx  align-items-center">
                <div><img src={Birthday} /></div>
-               <div className="vpv">12/12/1994</div>
+               <div className="vpv">{user[1].dob}</div>
         </div>
 
 

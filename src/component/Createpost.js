@@ -41,7 +41,7 @@ const Createpost=()=>{
      <div className="cp1">Create Post</div>
      <div className="cp2">Add a Description</div>
      <textarea className="cp3" rows="12" cols="80" onChange={(e)=>{settext1(e.target.value)}}>
-At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+     Research and improve customer satisfaction
 </textarea><br></br>
 {/* <button className="cp4">Add media</button> */}
 <div className="fdfdg">
@@ -78,6 +78,7 @@ At w3schools.com you will learn how to make a website. They offer free tutorials
         
     }}>Create Post</button>
 </div>
+<div className="footere">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div>
 
 </div>
 

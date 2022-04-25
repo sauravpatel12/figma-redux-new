@@ -80,7 +80,7 @@ const formik =useFormik({
     lastname:"",
     phone:"",
     password:"",
-    dob:"2013-01-08",
+    dob:"",
     gender:"",
     url:""
   
@@ -107,9 +107,11 @@ const formik =useFormik({
     dispatch(setuser({email:values.email,
     password:values.password, 
     phone:values.phone,
-  firstname:values.firstname,
-lastname:values.lastname,
-url:selectedImage,
+    firstname:values.firstname,
+    lastname:values.lastname,
+    url:selectedImage,
+    dob:values.dob,
+    gender:values.gender
 
 }
    
@@ -130,7 +132,7 @@ return(
  <Navbar />
  
      <div className='row'>
-           <div className='col-4 dd1'>
+           <div className='col-4 ddr1'>
              
               <div className='d3'>
                   <div>
@@ -194,7 +196,7 @@ return(
    
               {/* <input type="password" className='s5' placeholder='Enter your password' /> */}
               <div className='s6'>Date Of Birth*</div>
-              <input type="date" name='dob'        onChange={formik.handleChange}
+              <input type="date" name='dob'        onChange={(e)=>{formik.values.dob=e.target.value}}
                onBlur={formik.handleBlur} 
                value={formik.values.dob}  />
               {/* <Datepicker /> */}
@@ -227,12 +229,15 @@ return(
              <input className='s4' type="password" placeholder='Enter your password' />
              <div className='s3'>Gender</div>
              <input type="radio" name="gender" onChange={(e)=>{
-              console.log(e.target)    
+             formik.values.gender="male";  
+
             
               }}/><span className='s3 '> Male</span>
              <input type="radio" name="gender" className='female' onChange={(e)=>{
                 
-               console.log(e.target.value)
+                formik.values.gender="female";
+
+               console.log("female",e.target.value)
               }}/> <span className='s3  '>Female </span>
 
               <div className='fwe'>

@@ -12,10 +12,11 @@ const createpost = (createpost)=>{
     }
 }
 
-const setcurruser=(newcurruser)=>{
+const setcurruser=(curruser)=>{
+    console.log(curruser);
     return{
         type:'setcurruser',
-        payload:newcurruser,
+        payload:curruser,
     }
 }
 

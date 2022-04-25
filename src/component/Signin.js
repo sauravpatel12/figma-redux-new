@@ -9,10 +9,13 @@ import setuser from "../action/index";
 import {useFormik,form} from "formik";
 import * as yup from "yup";
 import { Store } from "@mui/icons-material";
+import { curruser } from "../reducer/curruser";
+import { setcurruser } from "../action/index";
 
 
 
 const Signin=()=>{
+  
   const [bool,setbool]=useState(false);
   const user=useSelector(store=>store.user);
   const formik =useFormik({
@@ -31,14 +34,21 @@ const Signin=()=>{
      console.log(user);
      console.log("buttton clickedd");
   
-     setbool(user.find((currentval)=>{
-       if((currentval.email===values.email )&& (currentval.password === values.password)){
-         return true;
-       }
-     }))
-     if(bool){
+     
+     const bool2=user.find((currentval)=>{
+      if((currentval.email===values.email )&& (currentval.password === values.password)){
+       
+        
+        dispatch(setcurruser(currentval));
+        return true;
+      }
+    })
+        
+     if(bool2){
        
       alert("you are succeessfuly login");
+      
+
       navigate('/postlist');
      }
      else{

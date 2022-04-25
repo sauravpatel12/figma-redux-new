@@ -10,7 +10,7 @@ const Reset =()=>{
         <>
            <Navbar/>
            <div className="row">
-            <div className="col-4 per1">
+            <div className="col-0 col-sm-0	col-md-0	col-lg-4 col-xl-4 per1">
              <div className="r11 d-flex justify-content-center align-items-center">
              Lorem Ipsum is simply<br></br>dummy text of the printing<br></br> and typesetting industry. 
 
@@ -21,7 +21,7 @@ const Reset =()=>{
             <img src={Star} className="fffp"/>
           </div>
             </div>
-            <div className="col-8 per2 ">
+            <div className="col-12 col-sm-12	col-md-12	col-lg-8 col-xl-8 per2 ">
 
                <div className="kg">
                    <div className="kg1">Reset Password</div>
@@ -33,7 +33,7 @@ const Reset =()=>{
                    <button className="kg7" onClick={()=>{
                      navigate('/signin')
                    }}>Save</button>
-                   <div className="fee">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div> 
+                   <div className="footere">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div> 
                </div>
 
 

@@ -52,7 +52,7 @@ const Common = () => {
                                 overlay:{
                                 
                                    
-                                },
+                                 },
                                 content:{
                                     width: "536px",
                                     height: "503px",
@@ -95,6 +95,7 @@ const Common = () => {
             }
 
             </div>
+           
 
 </div>
        ) }) }

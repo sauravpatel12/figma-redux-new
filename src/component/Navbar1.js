@@ -1,10 +1,15 @@
 import Logo from "../images/logo.png"
 import Fill from "../images/user-icon.png"
 import { useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { curruser } from "../reducer/curruser";
+
 const Navbar1=()=>{
+    
     const location = useLocation();
     const navigate=useNavigate();
-      
+    const curruser =useSelector(store=>store.curruser);
+    console.log(curruser);      
     return(
         <>
             <div className="nav">
@@ -31,7 +36,7 @@ navigate("/signin");
 <img src={Fill} className="us12"  />
 <span className="darrell" onClick={()=>{
     navigate('/profile')
-}}>Darrell Steward</span>
+}}>{curruser[0].firstname}</span>
 
 </div>
 

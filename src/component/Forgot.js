@@ -53,7 +53,7 @@ return(
     }
     }>Send
 </button>
-<div className="gfg">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div>
+<div className=" footere">@2020 All Rights Reserved. Engage Pulse Cookie Preferences, Privacy and Tearms</div>
 
  </div>
 

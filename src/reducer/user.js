@@ -2,12 +2,13 @@
 const initialstate=[
     
         {
-            email:1,
-            password:"dipesh",
+            email:"patelsaurav1333@gmail.com",
+            password:"12345678",
             firstname:"sdf",
             lastname:"fsff",
             phone:"435353535",
             url:"hgfh/fhhf/hgfh",
+
         }
     
 ]
