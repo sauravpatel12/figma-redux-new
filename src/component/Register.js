@@ -27,11 +27,13 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Stack from '@mui/material/Stack';
 import { useDispatch } from "react-redux";
 import setuser from "../action/index";
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Register=()=>{
 
-
+  const navigate=useNavigate();
   const dispatch=useDispatch();
   const [selectedImage, setSelectedImage] = useState(img3);
   
@@ -77,7 +79,10 @@ const formik =useFormik({
     firstname:"",
     lastname:"",
     phone:"",
-    password:""
+    password:"",
+    dob:"2013-01-08",
+    gender:"",
+    url:""
   
   },
   validationSchema:yup.object({
@@ -100,9 +105,18 @@ const formik =useFormik({
   onSubmit:(values)=>{
     console.log("values");
     dispatch(setuser({email:values.email,
-    password:values.password}));
-    console.log(values);
-    console.log("hi");
+    password:values.password, 
+    phone:values.phone,
+  firstname:values.firstname,
+lastname:values.lastname,
+url:selectedImage,
+
+}
+   
+    ));
+alert("user successfuly created");
+navigate('/signin');
+
   },
 
 })
@@ -142,7 +156,7 @@ return(
                   <img src={selectedImage} alt="" style={{width: 102, height: 102, borderRadius: 400/ 2}} />
                   <Stack direction="row" alignItems="center" spacing={2}>
       <label htmlFor="contained-button-file">
-        <Input accept="image/*" id="contained-button-file" multiple type="file"  onChange={handleChange1} />
+        <Input accept="image/*" id="contained-button-file" multiple type="file"  onChange={handleChange1 }  />
         <Button variant="contained" component="span" >
           Upload Image
         </Button>
@@ -174,13 +188,16 @@ return(
               {/* width: '21vw',backgroundColor:"#F9F9F9",height:"2.8vw" */}
               <input className='s4' type="password" placeholder='Enter your password' name='password' 
                   onChange={formik.handleChange}
-               onBlur={formik.handleBlur}
+               onBlur={formik.handleBlur} 
                value={formik.values.password} />
            
    
               {/* <input type="password" className='s5' placeholder='Enter your password' /> */}
               <div className='s6'>Date Of Birth*</div>
-              <Datepicker />
+              <input type="date" name='dob'        onChange={formik.handleChange}
+               onBlur={formik.handleBlur} 
+               value={formik.values.dob}  />
+              {/* <Datepicker /> */}
                <div className='s8 d-flex align-items-center'>  
               <input type="radio" className='s9' />
               <div className='s10'>I agree to the tearms of services</div>
@@ -210,12 +227,12 @@ return(
              <input className='s4' type="password" placeholder='Enter your password' />
              <div className='s3'>Gender</div>
              <input type="radio" name="gender" onChange={(e)=>{
-                
+              console.log(e.target)    
             
               }}/><span className='s3 '> Male</span>
              <input type="radio" name="gender" className='female' onChange={(e)=>{
                 
-               
+               console.log(e.target.value)
               }}/> <span className='s3  '>Female </span>
 
               <div className='fwe'>

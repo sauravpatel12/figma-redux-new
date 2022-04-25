@@ -10,7 +10,13 @@ import Con2 from "../images/Construction (1).png"
 import Con3 from "../images/Construction (2).png"
 import Con4 from "../images/Construction (3).png"
 import { useNavigate } from "react-router-dom";
+import { Store } from "@mui/icons-material";
+import { useSelector } from "react-redux";
+
 const Profile1=()=>{
+  const user=useSelector(store=>store.user);
+  console.log(user[1].email);
+ 
   const navigate=useNavigate();
     return(
   <>
@@ -31,22 +37,22 @@ const Profile1=()=>{
         <div className="ct1">
              
             <div >
-               <img src={Lee} className="lolo"   />
-               <div className="texi">Darrell Steward</div>
+               <img src={user[1].url} className="lolo"   />
+               <div className="texi">{user[1].firstname}</div>
              </div>
           
           <div className="bb">   
         <div className="d-flex xx  align-items-center">
                <div><img src={Mail}/></div>
-               <div className="vpv">jane.cooper@gmail.com</div>
+               <div className="vpv">{user[1].email}</div>
         </div>
         <div className="d-flex xx  align-items-center">
                <div><img src={Call} /></div>
-               <div className="vpv">987 654 3210</div>
+               <div className="vpv">{user[1].phone}</div>
         </div>
         <div className="d-flex xx  align-items-center">
                <div><img src={Female} /></div>
-               <div className="vpv">Female</div>
+               <div className="vpv">male</div>
         </div>
         <div className="d-flex xx  align-items-center">
                <div><img src={Birthday} /></div>
@@ -68,24 +74,24 @@ const Profile1=()=>{
         {/* cmp3 */}
         <div className="ct2">
               <div className="fff">
-              <img src={Lee} />
+              <img src={user[1].url} />
               <input type="file" className="dsdsf" placeholder="Change image" ></input>
               </div>
               <div className="d-flex">
               <div className="hee">
               <div className="comm1">First name*</div>
-              <input type="text" placeholder="Darrell" className="ji1" />
+              <input type="text" placeholder="Darrell" className="ji1" value={user[1].firstname}/>
               <div className="comm">Email*</div>
-              <input type="email" placeholder="jane.cooper@gmail.com" className="ji1" />
+              <input type="email" placeholder="jane.cooper@gmail.com" className="ji1" value={user[1].email}/>
               <div className="comm">Date of Birth*</div>
               <input type="date"  className="ji1" /> <br></br>
               <button className="savee">Save</button>
               </div>
               <div className="hee">
               <div className="comm1">Last Name*</div>
-              <input type="text" placeholder="Steward" className="ji1"/>
+              <input type="text" placeholder="Steward" className="ji1" value={user[1].lastname}/>
               <div className="comm">Phone*</div>
-              <input type="number" placeholder="987 654 3210" className="ji1"/>
+              <input type="number" placeholder="987 654 3210" className="ji1" value={user[1].phone}/>
               <div className="comm">Gender</div>
               <div className="priyank">
               <input type="radio" name="gender" value="male"/> <span className="comm">Male</span> <input type="radio" name="gender" value="female" className="rtrr"/> <span className="comm">Female</span>

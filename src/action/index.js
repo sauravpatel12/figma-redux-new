@@ -12,6 +12,13 @@ const createpost = (createpost)=>{
     }
 }
 
+const setcurruser=(newcurruser)=>{
+    return{
+        type:'setcurruser',
+        payload:newcurruser,
+    }
+}
+
 
 export default setuser;
-export {createpost};
+export {createpost,setcurruser};
