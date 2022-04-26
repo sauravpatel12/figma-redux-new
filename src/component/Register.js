@@ -196,7 +196,7 @@ return(
    
               {/* <input type="password" className='s5' placeholder='Enter your password' /> */}
               <div className='s6'>Date Of Birth*</div>
-              <input type="date" name='dob'        onChange={(e)=>{formik.values.dob=e.target.value}}
+              <input type="date" name='dob'   className='dewq'     onChange={(e)=>{formik.values.dob=e.target.value}}
                onBlur={formik.handleBlur} 
                value={formik.values.dob}  />
               {/* <Datepicker /> */}

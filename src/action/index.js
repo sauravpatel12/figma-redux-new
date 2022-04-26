@@ -12,6 +12,7 @@ const createpost = (createpost)=>{
     }
 }
 
+
 const setcurruser=(curruser)=>{
     console.log(curruser);
     return{

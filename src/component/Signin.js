@@ -38,7 +38,7 @@ const Signin=()=>{
      const bool2=user.find((currentval)=>{
       if((currentval.email===values.email )&& (currentval.password === values.password)){
        
-        
+         
         dispatch(setcurruser(currentval));
         return true;
       }

@@ -12,9 +12,12 @@ import Con4 from "../images/Construction (3).png"
 import { useNavigate } from "react-router-dom";
 import { Store } from "@mui/icons-material";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const Profile1=()=>{
   const user=useSelector(store=>store.user);
+  console.log(user);
+  const [img1,setimg1]=useState(Lee);
   
  
   const navigate=useNavigate();
@@ -37,7 +40,7 @@ const Profile1=()=>{
         <div className="ct1">
              
             <div >
-               <img src={user[1].url} className="lolo"   />
+               <img src={img1} className="lolo"   />
                <div className="texi">{user[1].firstname}</div>
              </div>
           
@@ -74,8 +77,12 @@ const Profile1=()=>{
         {/* cmp3 */}
         <div className="ct2">
               <div className="fff">
-              <img src={user[1].url} />
-              <input type="file" className="dsdsf" placeholder="Change image" ></input>
+              <img src={img1}   className="dsdsf"/>
+              <input type="file" placeholder="Change image" className="popol" onChange={(e)=>{
+               const img=URL.createObjectURL(e.target.files[0]);
+               setimg1(img);
+                 
+              }} ></input>
               </div>
               <div className="d-flex">
               <div className="hee">
@@ -84,7 +91,7 @@ const Profile1=()=>{
               <div className="comm">Email*</div>
               <input type="email" placeholder="jane.cooper@gmail.com" className="ji1" value={user[1].email}/>
               <div className="comm">Date of Birth*</div>
-              <input type="date"  className="ji1" /> <br></br>
+              <input type="date"  className="ji1" value={user[1].dob}/> <br></br>
               <button className="savee">Save</button>
               </div>
               <div className="hee">
@@ -94,7 +101,8 @@ const Profile1=()=>{
               <input type="number" placeholder="987 654 3210" className="ji1" value={user[1].phone}/>
               <div className="comm">Gender</div>
               <div className="priyank">
-              <input type="radio" name="gender" value="male"/> <span className="comm">Male</span> <input type="radio" name="gender" value="female" className="rtrr"/> <span className="comm">Female</span>
+              <input type="radio" name="gender" value="male" checked={user[1].gender === "male"?"checked":null} /> <span className="comm">Male</span> 
+              <input type="radio" name="gender" value="female" checked={user[1].gender === "female"?"checked":null} className="rtrr"/> <span className="comm">Female</span>
               </div>
 
                  
