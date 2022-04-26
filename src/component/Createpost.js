@@ -41,13 +41,13 @@ const Createpost=()=>{
      <div className="cp1">Create Post</div>
      <div className="cp2">Add a Description</div>
      <textarea className="cp3" rows="12" cols="80" onChange={(e)=>{settext1(e.target.value)}}>
-     Research and improve customer satisfaction
+     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 </textarea><br></br>
 {/* <button className="cp4">Add media</button> */}
 <div className="fdfdg">
 <Stack direction="row" alignItems="center" spacing={2}>
       <label htmlFor="contained-button-file">
-        <Input accept="image/*" id="contained-button-file" multiple type="file"  onChange={handleChange1} />
+        <Input  id="contained-button-file" multiple type="file"  onChange={handleChange1} />
         <Button variant="contained" component="span" >
           Upload Image
         </Button>

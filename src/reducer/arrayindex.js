@@ -1,14 +1,11 @@
 
 const initialstate=[]
-export  const curruser=(state=initialstate,action) =>{
+export  const arrayindex=(state=initialstate,action) =>{
 switch(action.type){
-    case "setcurruser":
+    case "setstate":
         
        console.log(action.payload)
         return [action.payload];
-    case "remove":
-        console.log("remove");
-        return [];    
     default:
         return state;    
 }

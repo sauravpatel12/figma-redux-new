@@ -13,8 +13,11 @@ import { useNavigate } from "react-router-dom";
 import { Store } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { reset } from "../action";
+import { useDispatch } from "react-redux";
 
 const Profile1=()=>{
+  const dispatch =useDispatch();
   const user=useSelector(store=>store.user);
   console.log(user);
   const [img1,setimg1]=useState(Lee);
@@ -68,7 +71,12 @@ const Profile1=()=>{
             navigate("/changepassword")
 
           }}>Change Password</button> <br></br>
-          <button className="kk2 bbnm">Logout</button>
+          <button className="kk2 bbnm" onClick={()=>{
+            
+            alert("Logout Successfuly");
+            navigate("/signin");
+            dispatch(reset());
+          }}>Logout</button>
         </div>
         </div>
 

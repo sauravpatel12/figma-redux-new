@@ -4,7 +4,11 @@ import { useState } from 'react';
 import Star from '../images/Star.png';
 import { border } from '@mui/system';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 const Verify=()=>{
+  useEffect(()=>{
+    alert("Your otp is 1234");
+  },[])
   const navigate=useNavigate();
   const location=useLocation();
   const path=location.pathname;

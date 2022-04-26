@@ -37,6 +37,7 @@ const Register=()=>{
   const dispatch=useDispatch();
   const [selectedImage, setSelectedImage] = useState(img3);
   
+  
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -100,6 +101,7 @@ const formik =useFormik({
      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
      "Phone number is not valid"
    )
+   
    
   }),
   onSubmit:(values)=>{

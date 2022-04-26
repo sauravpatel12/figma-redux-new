@@ -161,6 +161,7 @@ border-radius: 4px;
 }
 .cls6{
   margin-left: 6.7vw;
+ 
   /* border-radius: 10px;
   cursor: pointer;
 position: absolute;
@@ -2106,7 +2107,7 @@ height: 4vw;
     font-size: 20px;
     margin-bottom: 4vw;
   }
-  .me4{
+  /* .me4{
 
   }
   .me6{
@@ -2114,9 +2115,57 @@ height: 4vw;
   }
   .me8{
     
+  } */
+
+}
+
+@media only screen and (max-width: 550px){
+
+  .me2{
+    font-size: 4.5vw;
+    margin-top: 7vw;
+  }
+  .me3{
+    margin-top: 4.5vw;
+  }
+  .me4{
+   font-size: 3vw;
+   margin-top: 4.5vw;
+   margin-bottom: 2vw;
+  }
+  .me6{
+    font-size: 3vw;
+    margin-top: 4.5vw;
+    margin-bottom: 2vw;
+  }
+  .me8{
+    font-size: 3vw;
+    margin-top: 4.5vw;
+    margin-bottom: 2vw;
+  }
+  .me10{
+    width: 60vw;
+    height: 8vw;
+    margin-top: 4vw;
+
+  }
+  .xyz{
+    font-size: 2vw;
   }
 
 }
+
+@media only screen and (max-width: 350px){
+
+.me3{
+  font-size: 15px;
+  
+}
+
+}
+
+
+
 
 
   
