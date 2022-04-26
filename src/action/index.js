@@ -19,7 +19,20 @@ const setcurruser=(curruser)=>{
         payload:curruser,
     }
 }
+const setstate=(index)=>{
+    console.log("visited action",index);
+    return{
+        type:'setstate',
+        payload:index,
+    }
+}
+const update=(data)=>{
+    return{
+        type:'update',
+        payload:data,
+    }
+}
 
 
 export default setuser;
-export {createpost,setcurruser};
+export {createpost,setcurruser,setstate,update};

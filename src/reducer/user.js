@@ -19,6 +19,8 @@ export const user=(state=initialstate,action) =>{
         console.log("hello")
             console.log(action.payload)
             return [...state,action.payload];
+         case "update":
+             return [action.payload];   
         default:
             return state;    
     }

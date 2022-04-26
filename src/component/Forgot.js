@@ -2,17 +2,41 @@ import Navbar from "./Navbar";
 import Img1 from "../images/Star.png";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { setstate } from "../action/index";
+import { useDispatch, useSelector } from "react-redux";
 const Forgot=()=>{
+    const data=useSelector(store=>store.user);
+    const dispatch=useDispatch();
+
     const navigate=useNavigate();
     const [email,setemail]=useState("");
     const handlesubmit =(e)=>{
 
         // e.preventDefault();
-        console.log(email)
-        setTimeout(() => {
-            
-            navigate("/verify");
-        }, 1000);
+        if(!email){
+             alert("please enter email");
+        }
+        else{
+            const index= data.findIndex(object => {
+                return object.email === email;
+              });
+              
+              if(index=== -1)
+              {
+                  alert("please enter right email!")
+              }
+              else{
+                dispatch(  setstate(index))
+                  setTimeout(() => {
+
+                      
+                      navigate("/verify");
+                  }, 1000);
+              }
+              
+
+    
+    }
 
     }
 
