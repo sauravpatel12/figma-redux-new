@@ -36,6 +36,7 @@ const Register=()=>{
   const navigate=useNavigate();
   const dispatch=useDispatch();
   const [selectedImage, setSelectedImage] = useState(img3);
+  const [cpass,setcpass]=useState("");
   
   
   const [values, setValues] = React.useState({
@@ -100,11 +101,13 @@ const formik =useFormik({
    .matches(
      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
      "Phone number is not valid"
-   )
-   
+   ),
+   gender : yup.string().required("Gender Required"),
+   dob : yup.string().required("Dob Required"),
    
   }),
   onSubmit:(values)=>{
+    if(cpass === values.password){
     console.log("values");
     dispatch(setuser({email:values.email,
     password:values.password, 
@@ -118,8 +121,12 @@ const formik =useFormik({
 }
    
     ));
-alert("user successfuly created");
-navigate('/signin');
+    alert("user successfuly created");
+    navigate('/signin');}
+    else{
+      alert("please enter valid confirm password");
+    }
+
 
   },
 
@@ -228,7 +235,8 @@ return(
              />
               <div  className="errr " >{formik.touched.phone && formik.errors.phone? <p>{formik.errors.phone}</p>:null} </div> 
              <div className='s3'>Confirm Password* </div>
-             <input className='s4' type="password" placeholder='Enter your password' />
+             <input className='s4' type="password" placeholder='Enter your password' onChange={(e)=>{setcpass(e.target.value)}} />
+             
              <div className='s3'>Gender</div>
              <input type="radio" name="gender" onChange={(e)=>{
              formik.values.gender="male";  
@@ -241,6 +249,8 @@ return(
 
                console.log("female",e.target.value)
               }}/> <span className='s3  '>Female </span>
+                 <div  className=" s3 err" >{formik.touched.gender && formik.errors.gender? <p>{formik.errors.gender}</p>:null} </div> 
+
 
               <div className='fwe'>
               @2020 All Rights Reserved. Engage Pulse Cookie <br></br> Preferences, Privacy and Tearms
